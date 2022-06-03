@@ -40,11 +40,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 footer {
   background-color: #333;
-  position: absolute;
-  bottom: 0;
 }
 .container-fluid {
   padding-left: 0;

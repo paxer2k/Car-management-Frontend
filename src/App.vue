@@ -1,8 +1,9 @@
 <template>
-  <navigation class="fixed-top"/>
-  <router-view />
-  <Footer  class="fixed-bottom"/>
-  <!-- Add a router view -->
+  <navigation />
+  <div class="container page">
+      <router-view />
+      <Footer  />
+  </div>
 </template>
 
 <script>
@@ -23,5 +24,10 @@ export default {
 </script>
 
 <style>
+.page {
+  margin-top: 4rem;
+	margin-bottom: 6rem;
+	min-height: 55.5vh;
+}
 
 </style>

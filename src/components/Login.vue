@@ -26,7 +26,7 @@
                 placeholder="Enter your password..."
               />
             </div>
-            <button type="button" @click="login()" class="btn btn-primary mt-3">
+            <button type="button" @click="login()" class="btn btn-primary col-12 mt-3">
               Sign in
             </button>
           </form>

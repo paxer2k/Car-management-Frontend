@@ -15,7 +15,7 @@
               v-if="isLoggedIn()"
               to="/profile"
               style="text-align: center;"
-              class="nav-link"
+              class="nav-link "
               active-class="active"
             >
               Welcome {{ this.getUsername() }}</a
@@ -26,13 +26,13 @@
             <router-link to="/" class="nav-link" active-class="text-info">Home</router-link>
           </li>
           <li class="nav-item" v-if="isLoggedIn() && getRole() == 'Admin'">
-            <router-link to="/cars" class="nav-link" active-class="text-info">Cars</router-link>
+            <router-link to="/cars" class="nav-link" active-class="text-info">All cars</router-link>
           </li>
           <li class="nav-item" v-if="isLoggedIn()">
             <router-link to="/mycars" class="nav-link" active-class="text-info">My cars</router-link>
           </li>
           <li class="nav-item" v-if="isLoggedIn()">
-            <router-link to="/addcar" class="nav-link" active-class="text-info">ADD CAR</router-link>
+            <router-link to="/addcar" class="nav-link" active-class="text-info" >Add car</router-link>
           </li>
         </ul>
       </div>
@@ -42,10 +42,10 @@
         <ul class="navbar-nav ms-auto">
           <!-- when logged in, show logout butten and when not logged, show login -->
           <li class="nav-item">
-            <a v-if="isLoggedIn()" class="nav-link" @click="this.logout()"
+            <a v-if="isLoggedIn()" class="nav-link btn btn-outline-primary col-12 mb-1" style="color: white;" @click="this.logout()"
               >Logout</a
             >
-            <router-link v-else to="/login" class="nav-link">Login</router-link>
+            <router-link v-else to="/login" class="nav-link btn btn-primary col-12 mb-1" style="color: white;">Login</router-link>
             <!-- <router-link v-else to="/login" class="nav-link">login</router-link> -->
           </li>
         </ul>
@@ -68,7 +68,7 @@ export default {
       this.$store
         .dispatch("logout")
         .then(() => {
-          this.$router.push("/");
+          this.$router.push("/login");
         })
         .catch((error) => console.log(error));
     },
