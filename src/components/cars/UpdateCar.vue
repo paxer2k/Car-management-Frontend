@@ -1,8 +1,8 @@
 <template>
   <section>
-    <div class="container">
+    <div class="container col-lg-5">
       <form ref="form">
-        <h2 class="mt-3 mt-lg-5">Edit a car</h2>
+        <h2 class="mt-3 mt-lg-5" style="text-align:center;">Edit a car</h2>
         <h5 class="mb-4"></h5>
 
         <div class="input-group mb-3">
@@ -53,11 +53,11 @@
         </div>
 
         <div class="input-group mt-4">
-          <button type="button" class="btn btn-primary" @click="this.updateCar()">Update</button>
+          <button type="button" class="btn btn-primary col-6" @click="this.updateCar()">Update</button>
           <button
             style="text-align: center;"
             type="button"
-            class="btn btn-danger"
+            class="btn btn-danger col-6"
             @click="this.$router.push('/cars')"
           >
             Cancel
@@ -120,7 +120,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   @media (min-width: 800px) {
 	button {
 		align-items: center;

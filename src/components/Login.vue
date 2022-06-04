@@ -73,7 +73,7 @@ export default {
 };
 </script>
  
-<style>
+<style scope>
   #main {
     background-color: rgb(255, 255, 255);
     border-radius: 6%;

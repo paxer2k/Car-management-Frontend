@@ -31,7 +31,7 @@
         <li class="nav-item">
           <a
             v-if="isLoggedIn()"
-            class="nav-link btn btn-outline-primary col-12 mb-1"
+            class="btn btn-outline-primary col-12 mb-1"
             style="color: white"
             @click="this.logout()"
             >Logout</a
@@ -39,7 +39,7 @@
           <router-link
             v-else
             to="/login"
-            class="nav-link btn btn-primary col-12 mb-1"
+            class="btn btn-primary col-12 mb-1"
             style="color: white"
             >Login</router-link
           >
@@ -75,5 +75,16 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+@media (min-width: 800px) {
+	img {
+		display: block;
+	}
+}
+
+@media (max-width: 800px) {
+	img {
+		display: none;
+	}
+}
 </style>

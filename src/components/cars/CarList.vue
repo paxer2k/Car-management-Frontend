@@ -1,4 +1,4 @@
-<template scoped>
+<template>
   <section>
     <div class="container">
       <div class="row mt-3">

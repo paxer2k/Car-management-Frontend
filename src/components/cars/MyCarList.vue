@@ -1,11 +1,9 @@
 <template>
   <section>
     <div class="container">
-      <h2 class="mt-5 mt-lg-5" style="text-align: center;">{{ this.getUsername() }}'s Cars:</h2>
-      <div class="row mt-3">
-        <car-list />
+      <h2 class="mb-4" style="text-align: center;">{{ this.getUsername() }}'s Cars:</h2>
+        <car-list class="row"/>
       </div>
-    </div>
   </section>
 </template>
 
@@ -24,6 +22,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 </style>

@@ -1,18 +1,21 @@
 <template>
   <div class="container">
-    <h2 class="mt-3 mt-lg-5">Add a car:</h2>
+    <h2 class="mt-3" style="text-align:center;">Add a car:</h2>
   </div>
 
   <!-- container for add form -->
-  <div class="container">
+  <div class="container mt-3 col-lg-5">
     <div class="row">
-      <div class="col-md-12 col-lg-5 mb-4 mb-lg-2">
+      <div class="col-md-12 mb-4 mb-lg-2">
         <div v-if="errorMessage" class="alert alert-danger" role="alert">
-            {{ errorMessage }}
-          </div>
+          {{ errorMessage }}
+        </div>
         <form>
           <!-- labels and input fields -->
-          <div class="input-group mb-3" v-if="isLoggedIn() && getRole() == 'Admin'">
+          <div
+            class="input-group mb-3"
+            v-if="isLoggedIn() && getRole() == 'Admin'"
+          >
             <span class="input-group-text">UserId</span>
             <input
               type="number"
@@ -93,7 +96,6 @@
               required
             >
               <option
-                
                 v-for="category in categories"
                 :key="category.id"
                 v-bind:value="category.id"
@@ -119,16 +121,21 @@
           <div class="mt-2">
             <button
               type="button"
-              class="btn btn-danger m-1"
+              class="btn btn-success col-6"
+              @click="this.addCar()"
+            >
+              Add
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-danger col-6"
               @click="this.$router.push('/mycars')"
             >
               Cancel
             </button>
 
             <!-- Submit button -->
-            <button type="button" class="btn btn-success" @click="this.addCar()">
-              Add
-            </button>
           </div>
         </form>
       </div>
@@ -144,7 +151,7 @@ export default {
   data() {
     return {
       car: {
-        userId: localStorage.getItem('id'),
+        userId: localStorage.getItem("id"),
         registrationNumber: "",
         brand: "",
         model: "",
@@ -172,7 +179,7 @@ export default {
       axios
         .post("/cars", this.car)
         .then((result) => {
-          this.car.categoryId = result.data['categoryId'];
+          this.car.categoryId = result.data["categoryId"];
           console.log(result);
           this.$router.push("/cars");
         })
@@ -186,7 +193,7 @@ export default {
     },
     getRole() {
       return this.$store.state.role;
-    }
+    },
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <navigation v-if="this.$route.path != '/login'" class="fixed-top" />
-  <router-view />
+  <navigation v-if="this.$route.path != '/login'"/>
+  <router-view class="footer-app" />
   <Footer  v-if="this.$route.path != '/login'" class="bottom-0"/>
 </template>
 
@@ -22,4 +22,10 @@ export default {
 </script>
 
 <style>
+
+.footer-app {
+  margin-top: 4rem;
+	margin-bottom: 6rem;
+	min-height: 55.5vh;
+}
 </style>
