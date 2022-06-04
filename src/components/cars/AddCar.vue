@@ -118,7 +118,7 @@
           </div>
 
           <!-- Cancel button -->
-          <div class="mt-2">
+          <div class="mt-2 padding">
             <button
               type="button"
               class="btn btn-success col-6"

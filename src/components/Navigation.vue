@@ -22,8 +22,16 @@
 
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link v-if="isLoggedIn()" to="/addcar" class="text-secondary fas fa-car text-decoration-none" active-class="text-info"> Add</router-link>
-        </li>
+            <a
+              v-if="isLoggedIn()"
+              to="/profile"
+              style="text-align: center;"
+              class="nav-link"
+              active-class="active"
+            >
+              Welcome {{ this.getUsername() }}</a
+            >
+          </li>
       </ul>
 
       <ul class="navbar-nav">
@@ -31,7 +39,7 @@
         <li class="nav-item">
           <a
             v-if="isLoggedIn()"
-            class="btn btn-outline-primary col-12 mb-1"
+            class="nav-item btn btn-outline-primary col-12 mb-1"
             style="color: white"
             @click="this.logout()"
             >Logout</a
@@ -39,7 +47,7 @@
           <router-link
             v-else
             to="/login"
-            class="btn btn-primary col-12 mb-1"
+            class="nav-item btn btn-primary col-12 mb-1"
             style="color: white"
             >Login</router-link
           >

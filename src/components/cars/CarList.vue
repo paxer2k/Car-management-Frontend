@@ -1,6 +1,17 @@
 <template>
   <section>
     <div class="container">
+      <div class="add-content">
+        <h5> Add a car to the list</h5>
+      <button
+        v-if="isLoggedIn()" 
+        type="button"
+        class="btn btn-primary mt-3 col-3"
+        @click="this.$router.push('/addcar')"
+      >
+        Add car
+      </button>
+      </div>
       <div class="row mt-3">
         <car-list-item
           v-for="car in cars"
@@ -32,22 +43,21 @@ export default {
   },
   methods: {
     getCars() {
-
       if (this.$route.path == "/cars") {
-              axios.get("/cars").then((result) => {
-              this.cars = result.data;
-        })
-        .catch((error) => console.log(error));
-      }
-      else if (this.$route.path == "/mycars") {
         axios
-        .get("/cars/users/" + localStorage.getItem("id"))
-        .then((result) => {
-          this.cars = result.data;
-        })
-        .catch((error) => console.log(error));
+          .get("/cars")
+          .then((result) => {
+            this.cars = result.data;
+          })
+          .catch((error) => console.log(error));
+      } else if (this.$route.path == "/mycars") {
+        axios
+          .get("/cars/users/" + localStorage.getItem("id"))
+          .then((result) => {
+            this.cars = result.data;
+          })
+          .catch((error) => console.log(error));
       }
-
     },
     isLoggedIn() {
       return this.$store.state.token;
@@ -56,5 +66,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+
+.add-content {
+  text-align: center;
+}
 </style>

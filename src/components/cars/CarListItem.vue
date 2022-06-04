@@ -14,8 +14,8 @@
 
             <div class="mt-2 info">
               <small class="car-text fw-bold">{{ car.category.name }}</small>
-              <span class="text1 d-block">RegNo. {{ car.registrationNumber }}</span>
-              <span class="text1 d-block">{{ car.year }}</span>
+              <span class="regNo d-block">RegNo. {{ car.registrationNumber }}</span>
+              <span class="carYear d-block">{{ car.year }}</span>
             </div>
 
             <div class="price mt-2 dark">
@@ -27,13 +27,13 @@
           <div class="car-footer card-footer">
             <button
               @click="updateCar(car.id)"
-              class="btn btn-sm btn-warning col-6"
+              class="btn btn-sm btn-warning col-12 m-1"
             >
               <i class="fas fa-pen-to-square"></i>
             </button>
             <button
               @click="deleteCar(car.id)"
-              class="btn btn-sm btn-danger col-6"
+              class="btn btn-sm btn-danger col-12 m-1"
             >
               <i class="fas fa-trash-can"></i>
             </button>

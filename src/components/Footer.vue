@@ -5,7 +5,7 @@
     <!--Grid row-->
     <div class="row">
       <!--Grid column-->
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase text-info">About</h5>
         <p>
           This is a simple website built to manage your favourite cars.
@@ -15,13 +15,16 @@
         </p>
       </div>
 
-      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase text-info">Contact</h5>
         <p>
           <i class="text-info fas fa-envelope mr-3"></i> alex.arkhipov.7590@gmail.com
         </p>
         <p>
           <i class="text-info bi bi-linkedin mr-3"></i> alexander-arkhipov-003241226
+        </p>
+        <p>
+          <i class="text-info bi bi-map mr-3"></i> Nieuw-Vennep, 2152LB, Netherlands
         </p>
       </div>
     </div>
