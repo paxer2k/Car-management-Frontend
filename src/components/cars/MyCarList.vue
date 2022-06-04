@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container">
-      <h2 class="mt-3 mt-lg-5">{{ this.getUsername() }}'s Cars:</h2>
+      <h2 class="mt-5 mt-lg-5" style="text-align: center;">{{ this.getUsername() }}'s Cars:</h2>
       <div class="row mt-3">
         <car-list />
       </div>

@@ -1,32 +1,46 @@
 <template>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xxl-3 p-2">
-    <div class="card product-card h-100">
-      <div class="card-body">
-        <img :src="car.image" :alt="car.brand" :title="car.brand"/>
-        <p class="carRegistrationNumber">RegNo. {{ car.registrationNumber }}</p>
-        <br>
-        <div class="float-start">
-          <p>{{ car.brand }} {{ car.model }}</p>
-          <p>
-            <small>{{ car.category.name }}</small>
-          </p>
-          <p>{{ car.year }}</p>
+  <div class="col-lg-4 p-4 mt-5">
+    <div class="card car-card h-100">
+      <div class="card-body row">
+          <div class="car align-items-center p-2 text-center">
+            <img
+              :src="car.image"
+              :alt="car.brand"
+              :title="car.brand"
+              style="height: 100px"
+              class="rounded"
+            />
+            <h5 class="mt-2 car-text fw-bold">{{ car.brand }} {{ car.model }}</h5>
+
+            <div class="mt-2 info">
+              <small class="car-text fw-bold">{{ car.category.name }}</small>
+              <span class="text1 d-block">RegNo. {{ car.registrationNumber }}</span>
+              <span class="text1 d-block">{{ car.year }}</span>
+            </div>
+
+            <div class="price mt-2 dark">
+              <div class="price mt-2 align-items-center">
+                <span class="text1 d-block">€{{ car.price }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="car-footer card-footer">
+            <button
+              @click="updateCar(car.id)"
+              class="btn btn-sm btn-warning col-6"
+            >
+              <i class="fas fa-pen-to-square"></i>
+            </button>
+            <button
+              @click="deleteCar(car.id)"
+              class="btn btn-sm btn-danger col-6"
+            >
+              <i class="fas fa-trash-can"></i>
+            </button>
+          </div>
         </div>
-        <span class="price float-end">€{{ car.price }}</span>
-      </div>
-      <div class="card-footer">
-        <button class="btn btn-warning" @click="updateCar(car.id)">Edit</button
-        >&nbsp;&nbsp;
-        <button
-          class="btn btn-danger"
-          style="float: right"
-          @click="deleteCar(car.id)"
-        >
-          Delete
-        </button>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -46,10 +60,8 @@ export default {
           this.$emit("update");
         })
         .catch((error) => console.log(error));
-      // use axios to delete the product
     },
     updateCar(id) {
-      // use the router to navigate to the editproduct route and pass the id
       this.$router.push("/updateCar/" + id);
     },
   },
@@ -57,8 +69,5 @@ export default {
 </script>
 
 <style>
-.carRegistrationNumber {
-  text-align: center;
-  font-weight: bold;
-}
+
 </style>

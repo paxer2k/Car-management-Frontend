@@ -4,9 +4,9 @@
   </div>
 
   <!-- container for add form -->
-  <div class="container" style="text-position: center;">
+  <div class="container">
     <div class="row">
-      <div class="col-md-12 col-lg-4 mb-4 mb-lg-4">
+      <div class="col-md-12 col-lg-5 mb-4 mb-lg-2">
         <div v-if="errorMessage" class="alert alert-danger" role="alert">
             {{ errorMessage }}
           </div>
@@ -93,6 +93,7 @@
               required
             >
               <option
+                
                 v-for="category in categories"
                 :key="category.id"
                 v-bind:value="category.id"

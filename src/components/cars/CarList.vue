@@ -1,16 +1,6 @@
 <template scoped>
   <section>
     <div class="container">
-      <div class="content" style="text-align: center;">
-      <button
-        v-if="isLoggedIn()" 
-        type="button"
-        class="btn btn-success mt-3"
-        @click="this.$router.push('/addcar')"
-      >
-        Add car
-      </button>
-      </div>
       <div class="row mt-3">
         <car-list-item
           v-for="car in cars"

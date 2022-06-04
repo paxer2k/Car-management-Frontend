@@ -1,55 +1,51 @@
-
 <template>
   <nav class="navbar navbar-dark bg-dark py-2 navbar-expand-md">
-    <a href="/" class="position-absolute text-decoration-none" style="margin-left: 20px;">
-      <!-- logo from icons-icons.com -->
+    <a
+      href="/"
+      class="position-absolute text-decoration-none"
+      style="margin-left: 20px"
+    >
       <img src="../assets/carimg.png" height="30" />
     </a>
     <div class="container">
-      <div
-        class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <!-- Add a router link to the homepage (don't use the a tag!) -->
-            <a
-              v-if="isLoggedIn()"
-              to="/profile"
-              style="text-align: center;"
-              class="nav-link "
-              active-class="active"
-            >
-              Welcome {{ this.getUsername() }}</a
-            >
-          </li>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <router-link to="/" class="nav-link" active-class="text-info">Home</router-link>
+        </li>
+        <li class="nav-item" v-if="isLoggedIn() && getRole() == 'Admin'">
+          <router-link to="/cars" class="nav-link" active-class="text-info">All cars</router-link>
+        </li>
+        <li class="nav-item" v-if="isLoggedIn()">
+          <router-link to="/mycars" class="nav-link" active-class="text-info">My cars</router-link>
+        </li>
+      </ul>
 
-          <li class="nav-item">
-            <router-link to="/" class="nav-link" active-class="text-info">Home</router-link>
-          </li>
-          <li class="nav-item" v-if="isLoggedIn() && getRole() == 'Admin'">
-            <router-link to="/cars" class="nav-link" active-class="text-info">All cars</router-link>
-          </li>
-          <li class="nav-item" v-if="isLoggedIn()">
-            <router-link to="/mycars" class="nav-link" active-class="text-info">My cars</router-link>
-          </li>
-          <li class="nav-item" v-if="isLoggedIn()">
-            <router-link to="/addcar" class="nav-link" active-class="text-info" >Add car</router-link>
-          </li>
-        </ul>
-      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <router-link v-if="isLoggedIn()" to="/addcar" class="text-secondary fas fa-car text-decoration-none" active-class="text-info"> Add</router-link>
+        </li>
+      </ul>
 
-      <!-- Navbar items right -->
-      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ms-auto">
-          <!-- when logged in, show logout butten and when not logged, show login -->
-          <li class="nav-item">
-            <a v-if="isLoggedIn()" class="nav-link btn btn-outline-primary col-12 mb-1" style="color: white;" @click="this.logout()"
-              >Logout</a
-            >
-            <router-link v-else to="/login" class="nav-link btn btn-primary col-12 mb-1" style="color: white;">Login</router-link>
-            <!-- <router-link v-else to="/login" class="nav-link">login</router-link> -->
-          </li>
-        </ul>
-      </div>
+      <ul class="navbar-nav">
+        <!-- when logged in, show logout butten and when not logged, show login -->
+        <li class="nav-item">
+          <a
+            v-if="isLoggedIn()"
+            class="nav-link btn btn-outline-primary col-12 mb-1"
+            style="color: white"
+            @click="this.logout()"
+            >Logout</a
+          >
+          <router-link
+            v-else
+            to="/login"
+            class="nav-link btn btn-primary col-12 mb-1"
+            style="color: white"
+            >Login</router-link
+          >
+          <!-- <router-link v-else to="/login" class="nav-link">login</router-link> -->
+        </li>
+      </ul>
     </div>
   </nav>
 </template>
@@ -80,5 +76,4 @@ export default {
 </script>
 
 <style>
-
 </style>
