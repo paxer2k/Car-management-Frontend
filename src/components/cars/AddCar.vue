@@ -118,10 +118,10 @@
           </div>
 
           <!-- Cancel button -->
-          <div class="mt-2">
+          <div class="mt-3 mb-2">
             <button
               type="button"
-              class="btn btn-success col-6"
+              class="btn btn-success col-12 m-1"
               @click="this.addCar()"
             >
               Add
@@ -129,7 +129,7 @@
 
             <button
               type="button"
-              class="btn btn-danger col-6"
+              class="btn btn-danger col-12 m-1"
               @click="this.$router.push('/mycars')"
             >
               Cancel

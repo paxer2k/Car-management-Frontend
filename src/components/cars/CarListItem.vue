@@ -27,13 +27,13 @@
           <div class="car-footer card-footer">
             <button
               @click="updateCar(car.id)"
-              class="btn btn-sm btn-warning col-6"
+              class="btn btn-sm btn-warning col-12 m-1"
             >
               <i class="fas fa-pen-to-square"></i>
             </button>
             <button
               @click="deleteCar(car.id)"
-              class="btn btn-sm btn-danger col-6"
+              class="btn btn-sm btn-danger col-12 m-1"
             >
               <i class="fas fa-trash-can"></i>
             </button>
