@@ -53,11 +53,11 @@
         </div>
 
         <div class="input-group mt-4">
-          <button type="button" class="btn btn-primary col-12 m-1" @click="this.updateCar()">Update</button>
+          <button type="button" class="btn btn-primary col-6" @click="this.updateCar()">Update</button>
           <button
             style="text-align: center;"
             type="button"
-            class="btn btn-danger col-12 m-1"
+            class="btn btn-danger col-6"
             @click="this.$router.push('/cars')"
           >
             Cancel
