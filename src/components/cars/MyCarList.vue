@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container">
-      <h2 class="mb-4" style="text-align: center;">{{ this.getUsername() }}'s cars:</h2>
+      <h2 class="title-user mb-4" style="text-align: center;">{{ this.getUsername() }}'s cars:</h2>
         <car-list class="row"/>
       </div>
   </section>
@@ -23,5 +23,7 @@ export default {
 </script>
 
 <style scoped>
-
+ .title-user {
+   color:maroon;
+ }
 </style>

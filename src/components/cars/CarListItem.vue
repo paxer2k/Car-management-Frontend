@@ -24,7 +24,7 @@
               </div>
             </div>
           </div>
-          <div class="car-footer card-footer">
+          <div class="car-footer card-footer" v-if="this.$store.getters.isAdmin">
             <button
               @click="updateCar(car.id)"
               class="btn btn-sm btn-warning col-12 m-1"

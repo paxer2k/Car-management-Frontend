@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="mt-3" style="text-align:center;">Add a car:</h2>
+    <h2 class="mt-3" style="text-align: center">Add a car:</h2>
   </div>
 
   <!-- container for add form -->
@@ -14,7 +14,9 @@
           <!-- labels and input fields -->
           <div
             class="input-group mb-3"
-            v-if="this.$store.getters.isAuthenticated && this.$store.getters.isAdmin"
+            v-if="
+              this.$store.getters.isAuthenticated && this.$store.getters.isAdmin
+            "
           >
             <span class="input-group-text">UserId</span>
             <input
@@ -134,7 +136,6 @@
             >
               Cancel
             </button>
-
           </div>
         </form>
       </div>
@@ -180,12 +181,12 @@ export default {
         .then((result) => {
           this.car.categoryId = result.data["categoryId"];
           console.log(result);
-          this.$router.push("/cars");
         })
         .catch((error) => {
           this.errorMessage = error;
           console.log(error);
         });
+      this.$router.push("/cars");
     },
   },
 };
