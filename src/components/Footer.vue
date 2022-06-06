@@ -7,6 +7,7 @@
       <!--Grid column-->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase text-info">About</h5>
+        <hr class="text-info">
         <p>
           This is a simple website built to manage your favourite cars.
           You can use this as an inspiration or a collection of your dream cars 
@@ -17,6 +18,7 @@
 
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase text-info">Contact</h5>
+        <hr class="text-info">
         <p>
           <i class="text-info fas fa-envelope mr-3"></i> alex.arkhipov.7590@gmail.com
         </p>
@@ -31,7 +33,7 @@
   </div>
 
   <div class="text-center p-3 mt-3 bg-dark">
-    © 2020 Copyright:
+    © 2022 GitHub:
     <a class="text-info" href="https://github.com/paxer2k/" target="_blank">Alexander Arkhipov</a>
   </div>
   <!-- Copyright -->
