@@ -7,13 +7,16 @@ const store = createStore({
             id: null,
             token: null,
             username: null,
-            role: "User",
+            role: null,
         }
     },
 
     getters: {
         isAuthenticated(state) {
             return state.token != null;
+        },
+        isAdmin(state) {
+            return state.role == "Admin";
         }
     },
 
@@ -59,7 +62,7 @@ const store = createStore({
                 axios.defaults.headers.common["Authorization"] = "";
                 this.state.token = null;
                 this.state.username = null;
-                this.state.role = 'User';
+                this.state.role = null;
                 resolve();
             })
         },

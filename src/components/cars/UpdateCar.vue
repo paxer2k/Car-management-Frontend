@@ -79,7 +79,6 @@ export default {
     return {
       car: {
         userId: localStorage.getItem('id'),
-        id: 0,
         registrationNumber: "",
         brand: "",
         model: "",
@@ -109,7 +108,7 @@ export default {
   methods: {
     updateCar() {
       axios
-        .put("/cars/" + this.car.id, this.car)
+        .put("/cars/" + this.id, this.car)
         .then((result) => {
           console.log(result);
           this.$router.push("/cars");

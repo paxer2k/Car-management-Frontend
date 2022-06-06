@@ -4,7 +4,7 @@
       <div class="add-content">
         <h5> Add a car to the list</h5>
       <button
-        v-if="isLoggedIn()" 
+        v-if="this.$store.getters.isAuthenticated" 
         type="button"
         class="btn btn-primary mt-3 col-3"
         @click="this.$router.push('/addcar')"
@@ -58,9 +58,6 @@ export default {
           })
           .catch((error) => console.log(error));
       }
-    },
-    isLoggedIn() {
-      return this.$store.state.token;
     },
   },
 };

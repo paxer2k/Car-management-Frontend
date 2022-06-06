@@ -12,10 +12,10 @@
         <li class="nav-item">
           <router-link to="/" class="nav-link" active-class="text-info">Home</router-link>
         </li>
-        <li class="nav-item" v-if="isLoggedIn() && getRole() == 'Admin'">
+        <li class="nav-item" v-if="this.$store.getters.isAuthenticated && this.$store.getters.isAdmin">
           <router-link to="/cars" class="nav-link" active-class="text-info">All cars</router-link>
         </li>
-        <li class="nav-item" v-if="isLoggedIn()">
+        <li class="nav-item" v-if="this.$store.getters.isAuthenticated">
           <router-link to="/mycars" class="nav-link" active-class="text-info">My cars</router-link>
         </li>
       </ul>
@@ -23,7 +23,7 @@
       <ul class="navbar-nav">
         <li class="nav-item">
             <a
-              v-if="isLoggedIn()"
+              v-if="this.$store.getters.isAuthenticated"
               to="/profile"
               style="text-align: center;"
               class="nav-link"
@@ -38,7 +38,7 @@
         <!-- when logged in, show logout butten and when not logged, show login -->
         <li class="nav-item">
           <a
-            v-if="isLoggedIn()"
+            v-if="this.$store.getters.isAuthenticated"
             class="nav-item btn btn-outline-primary col-12 mb-1"
             style="color: white"
             @click="this.logout()"
@@ -62,12 +62,6 @@
 export default {
   name: "Navigation",
   methods: {
-    isLoggedIn() {
-      return this.$store.state.token;
-    },
-    getRole() {
-      return this.$store.state.role;
-    },
     logout() {
       this.$store
         .dispatch("logout")

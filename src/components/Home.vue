@@ -3,7 +3,7 @@
     <div class="container">
       <div>
         <h2>Welcome to Alex's car management system</h2>
-        <h5 class="text-danger" v-if="!isLoggedIn()">Login now to manage your own car today!</h5>
+        <h5 class="text-danger" v-if="!this.$store.getters.isAuthenticated">Login now to manage your own car today!</h5>
         <img src="../assets/homepagepicture.jpg" height="400" />
       </div>
     </div>
@@ -13,12 +13,6 @@
 <script>
 export default {
   name: "Home",
-
-  methods: {
-    isLoggedIn() {
-      return this.$store.state.token;
-    },
-  },
 };
 </script>
   

@@ -14,7 +14,7 @@
           <!-- labels and input fields -->
           <div
             class="input-group mb-3"
-            v-if="isLoggedIn() && getRole() == 'Admin'"
+            v-if="this.$store.getters.isAuthenticated && this.$store.getters.isAdmin"
           >
             <span class="input-group-text">UserId</span>
             <input
@@ -186,12 +186,6 @@ export default {
           this.errorMessage = error;
           console.log(error);
         });
-    },
-    isLoggedIn() {
-      return this.$store.state.token;
-    },
-    getRole() {
-      return this.$store.state.role;
     },
   },
 };
