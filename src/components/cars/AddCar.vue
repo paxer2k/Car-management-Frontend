@@ -99,6 +99,7 @@
                 v-for="category in categories"
                 :key="category.id"
                 v-bind:value="category.id"
+                required
               >
                 {{ category.name }}
               </option>
@@ -117,11 +118,10 @@
             />
           </div>
 
-          <!-- Cancel button -->
           <div class="mt-2 padding">
             <button
-              type="button"
-              class="btn btn-success col-6"
+              type="submit"
+              class="btn btn-success col-12 m-1"
               @click="this.addCar()"
             >
               Add
@@ -129,13 +129,12 @@
 
             <button
               type="button"
-              class="btn btn-danger col-6"
+              class="btn btn-danger col-12 m-1"
               @click="this.$router.push('/mycars')"
             >
               Cancel
             </button>
 
-            <!-- Submit button -->
           </div>
         </form>
       </div>
