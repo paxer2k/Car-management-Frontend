@@ -8,8 +8,7 @@
           type="button"
           class="btn btn-success bi bi-plus mt-3 col-3"
           @click="this.$router.push('/addcar')"
-        >
-        </button>
+        ></button>
       </div>
 
       <div class="row mt-3">
@@ -60,12 +59,13 @@ export default {
           axios
             .get("/cars?offset=" + this.offset + "&limit=" + this.limit)
             .then((result) => {
-              this.cars = result.data;
-              if (this.cars.length == 0) {
+              var carData = result.data;
+              if (carData.length == 0) {
                 this.previous(this.limit);
                 this.getCars();
                 return;
               }
+              this.cars = carData;
             })
             .catch((error) => console.log(error));
           break;
@@ -81,23 +81,24 @@ export default {
                 this.limit
             )
             .then((result) => {
-              this.cars = result.data;
-              if (this.cars.length == 0) {
+              var carData = result.data;
+              if (carData.length == 0) {
                 this.previous(this.limit);
                 this.getCars();
                 return;
               }
+              this.cars = carData;
             })
             .catch((error) => console.log(error));
       }
     },
-    next(increment) {
-      this.offset += increment;
+    next(limit) {
+      this.offset += limit;
       this.getCars();
     },
-    previous(decrement) {
-      if (this.offset - decrement >= 0) {
-        this.offset -= decrement;
+    previous(limit) {
+      if (this.offset - limit >= 0) {
+        this.offset -= limit;
         this.getCars();
       }
     },

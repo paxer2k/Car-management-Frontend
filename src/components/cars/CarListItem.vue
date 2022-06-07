@@ -54,12 +54,15 @@ export default {
   methods: {
     deleteCar(id) {
       axios
+      if (confirm("Do you really want to delete this car?")) {
+        axios
         .delete("/cars/" + id)
         .then((result) => {
           console.log(result);
           this.$emit("update");
         })
         .catch((error) => console.log(error));
+      }
     },
     updateCar(id) {
       this.$router.push("/updateCar/" + id);
