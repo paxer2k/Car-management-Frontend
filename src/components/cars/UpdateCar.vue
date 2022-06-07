@@ -1,6 +1,9 @@
 <template>
   <section>
     <div class="container col-lg-5">
+      <div v-if="errorMessage" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </div>
       <form ref="form">
         <h2 class="mt-3 mt-lg-5" style="text-align:center;">Edit a car</h2>
         <h5 class="mb-4"></h5>
@@ -87,6 +90,7 @@ export default {
         image: "",
         categoryId: 0
       },
+      errorMessage: "",
       categories: [],
     };
   },
@@ -113,7 +117,10 @@ export default {
           console.log(result);
           this.$router.push("/cars");
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          this.errorMessage = error.response.data;
+          console.log(error)
+        });
     },
   },
 };

@@ -2,7 +2,6 @@
   <div class="container">
     <h2 class="mt-3" style="text-align: center">Add a car:</h2>
   </div>
-
   <!-- container for add form -->
   <div class="container mt-3 col-lg-5">
     <div class="row">
@@ -25,7 +24,6 @@
               id="carRegistrationNumber"
               placeholder="Enter a userId..."
               v-model="car.userId"
-              required
             />
           </div>
 
@@ -37,7 +35,6 @@
               id="carRegistrationNumber"
               placeholder="Enter a registration number..."
               v-model="car.registrationNumber"
-              required
             />
           </div>
 
@@ -49,7 +46,6 @@
               id="carBrand"
               placeholder="Enter car brand..."
               v-model="car.brand"
-              required
             />
           </div>
 
@@ -61,7 +57,6 @@
               id="carModel"
               placeholder="Enter car model..."
               v-model="car.model"
-              required
             />
           </div>
 
@@ -73,7 +68,6 @@
               id="carYear"
               placeholder="Enter car year..."
               v-model="car.year"
-              required
             />
           </div>
 
@@ -85,7 +79,6 @@
               id="carPrice"
               placeholder="Enter car price..."
               v-model="car.price"
-              required
             />
           </div>
 
@@ -95,7 +88,6 @@
               class="form-control"
               id="carCategory"
               v-model="car.categoryId"
-              required
             >
               <option
                 v-for="category in categories"
@@ -116,13 +108,12 @@
               id="carImage"
               placeholder="Enter image url..."
               v-model="car.image"
-              required
             />
           </div>
 
           <div class="mt-2 padding">
             <button
-              type="submit"
+              type="button"
               class="btn btn-success col-12 m-1"
               @click="this.addCar()"
             >
@@ -172,7 +163,10 @@ export default {
         console.log(result);
         this.categories = result.data;
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        this.errorMessage = error.response.data;
+        console.log(error);
+      });
   },
   methods: {
     addCar() {
@@ -181,12 +175,12 @@ export default {
         .then((result) => {
           this.car.categoryId = result.data["categoryId"];
           console.log(result);
+          this.$router.push("/cars");
         })
         .catch((error) => {
-          this.errorMessage = error;
+          this.errorMessage = error.response.data;
           console.log(error);
         });
-      this.$router.push("/cars");
     },
   },
 };

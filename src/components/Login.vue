@@ -62,7 +62,7 @@ export default {
           this.$router.replace("/mycars");
         })
         .catch((error) => {
-          this.errorMessage = "Invalid credentials";
+          this.errorMessage = error.response.data;
           console.log(error);
         });
     },
