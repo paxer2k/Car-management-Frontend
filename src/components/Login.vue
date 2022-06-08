@@ -81,8 +81,11 @@ export default {
   }
 
   .login-icon {
-    font-size: 100px;
     text-align: center;
     color: #0275d8;
+  }
+
+  .bi-person {
+    font-size: 100px;
   }
 </style>

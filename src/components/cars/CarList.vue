@@ -21,13 +21,15 @@
       </div>
 
       <div class="pagination-content">
-        <h5>Next or Previous 3 cars</h5>
         <button class="btn btn-danger m-1" @click="previous(this.limit)">
           Previous
         </button>
         <button class="btn btn-success m-1" @click="next(this.limit)">
           Next
         </button>
+      </div>
+      <div class="page-number">
+        {{ page + 1 }}
       </div>
     </div>
   </section>
@@ -47,6 +49,7 @@ export default {
       cars: [],
       offset: 0,
       limit: 3,
+      page: 0,
     };
   },
   mounted() {
@@ -94,11 +97,13 @@ export default {
     },
     next(limit) {
       this.offset += limit;
+      this.page++;
       this.getCars();
     },
     previous(limit) {
       if (this.offset - limit >= 0) {
         this.offset -= limit;
+        this.page--;
         this.getCars();
       }
     },
@@ -106,7 +111,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .add-content {
   text-align: center;
 }
@@ -117,5 +122,11 @@ export default {
 
 .bi {
   font-size: 30px;
+}
+
+.page-number {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
 }
 </style>
