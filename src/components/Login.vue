@@ -62,7 +62,7 @@ export default {
           this.$router.replace("/mycars");
         })
         .catch((error) => {
-          this.errorMessage = error.response.data;
+          this.errorMessage = error.response.data.errorMessage;
           console.log(error);
         });
     },

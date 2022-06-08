@@ -29,7 +29,7 @@
         </button>
       </div>
       <div class="page-number">
-        {{ page + 1 }}
+        {{ page + 1 }} 
       </div>
     </div>
   </section>
@@ -107,6 +107,13 @@ export default {
         this.getCars();
       }
     },
+    countAllPages(page) {
+      var totalPageLength = 0;
+      for (var i = 1; i <= page.lenth; i++) {
+        totalPageLength += i;
+      }
+      return totalPageLength; // figure out later
+    }
   },
 };
 </script>

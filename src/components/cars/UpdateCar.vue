@@ -1,11 +1,11 @@
 <template>
   <section>
     <div class="container col-lg-5">
+        <h2 class="mt-3 mt-lg-5" style="text-align:center;">Edit a car</h2>
       <div v-if="errorMessage" class="alert alert-danger" role="alert">
           {{ errorMessage }}
         </div>
       <form ref="form">
-        <h2 class="mt-3 mt-lg-5" style="text-align:center;">Edit a car</h2>
         <h5 class="mb-4"></h5>
 
         <div class="input-group mb-3">
@@ -118,7 +118,7 @@ export default {
           this.$router.push("/cars");
         })
         .catch((error) => {
-          this.errorMessage = error.response.data;
+          this.errorMessage = error.response.data.errorMessage;
           console.log(error)
         });
     },

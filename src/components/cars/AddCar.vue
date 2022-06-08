@@ -178,7 +178,7 @@ export default {
           this.$router.push("/cars");
         })
         .catch((error) => {
-          this.errorMessage = error.response.data;
+          this.errorMessage = error.response.data.errorMessage;
           console.log(error);
         });
     },

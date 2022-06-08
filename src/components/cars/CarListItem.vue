@@ -54,7 +54,7 @@ export default {
   methods: {
     deleteCar(id) {
       axios
-      if (confirm("Do you really want to delete this car?")) {
+      if (confirm("Are you sure you want to delete this car?")) {
         axios
         .delete("/cars/" + id)
         .then((result) => {
