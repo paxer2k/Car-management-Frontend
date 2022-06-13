@@ -175,7 +175,7 @@ export default {
         .then((result) => {
           this.car.categoryId = result.data["categoryId"];
           console.log(result);
-          this.$router.push("/cars");
+          this.$router.push("/mycars");
         })
         .catch((error) => {
           this.errorMessage = error.response.data.errorMessage;

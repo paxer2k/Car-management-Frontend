@@ -65,7 +65,7 @@ export default {
       }
     },
     updateCar(id) {
-      this.$router.push("/updateCar/" + id);
+      this.$router.push("/updatecar/" + id);
     },
   },
 };

@@ -1,10 +1,7 @@
 <template>
 <footer class="main-footer text-center text-lg-start text-white">
-  <!-- Grid container -->
   <div class="container p-4 pb-0">
-    <!--Grid row-->
     <div class="row">
-      <!--Grid column-->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
         <h5 class="text-uppercase text-info">About</h5>
         <hr class="text-info">
@@ -36,7 +33,7 @@
     © 2022 GitHub:
     <a class="text-info" href="https://github.com/paxer2k/" target="_blank">Alexander Arkhipov</a>
   </div>
-  <!-- Copyright -->
+  
 </footer>
 </template>
 

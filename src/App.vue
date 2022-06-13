@@ -24,8 +24,8 @@ export default {
 <style>
 
 .footer-app {
-  margin-top: 4rem;
-	margin-bottom: 6rem;
+  margin-top: 64px;
+	margin-bottom: 96px;
 	min-height: 55.5vh;
 }
 </style>

@@ -2,6 +2,7 @@
   <section>
     <div class="container">
       <div class="add-content">
+        <h5 class="text-danger" v-if="this.cars.length == 0">You do not have any cars yet</h5>
         <h5>Add a car to the list</h5>
         <button
           v-if="this.$store.getters.isAuthenticated"
@@ -69,6 +70,7 @@ export default {
                 return;
               }
               this.cars = carData;
+              this.showMessageIfCarsLessThanOne(this.cars);
             })
             .catch((error) => console.log(error));
           break;
@@ -107,13 +109,6 @@ export default {
         this.getCars();
       }
     },
-    countAllPages(page) {
-      var totalPageLength = 0;
-      for (var i = 1; i <= page.lenth; i++) {
-        totalPageLength += i;
-      }
-      return totalPageLength; // figure out later
-    }
   },
 };
 </script>

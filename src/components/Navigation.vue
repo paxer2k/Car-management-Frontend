@@ -35,7 +35,6 @@
       </ul>
 
       <ul class="navbar-nav">
-        <!-- when logged in, show logout butten and when not logged, show login -->
         <li class="nav-item">
           <a
             v-if="this.$store.getters.isAuthenticated"
@@ -51,7 +50,6 @@
             style="color: white"
             >Login</router-link
           >
-          <!-- <router-link v-else to="/login" class="nav-link">login</router-link> -->
         </li>
       </ul>
     </div>
